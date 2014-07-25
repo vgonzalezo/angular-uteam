@@ -1,0 +1,8 @@
+{
+    "name": "angular-uteam-server",
+    "description": "Servidor web de UTeam",
+    "version": "1.0.0",
+    "dependencies": {
+        "express": "3.x"
+    }
+}

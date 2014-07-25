@@ -1,0 +1,48 @@
+nav.tags {
+	background: white;
+	border-radius: 3px;
+	padding: 0 5px;
+	border: 1px solid #ccc;
+	font-size: 0.8rem;
+	min-width: 100px;
+}
+
+nav.tags input {
+	border: none;	
+}
+
+nav.tags input:focus {
+	outline: none;
+}
+
+nav.tags div {
+	display: inline-block;
+	vertical-align: middle;	
+}
+
+nav.tags > div {
+	margin: 4px 0;
+}
+
+nav.tags .tag {
+	user-select: none;
+	margin: 2px;
+	border-radius: 2px;
+	padding: 0 5px;
+	color: white;
+	height: 32px;
+	line-height: 32px;
+}
+
+nav.tags .tag.categories {
+	background-color: #ea8511;
+}
+
+nav.tags .tag.username {
+	background-color: rgba(56, 82, 144, 0.8);
+}
+
+nav.tags [class^="icon-"] {
+	font-size: 8px;
+	cursor: pointer;
+}
