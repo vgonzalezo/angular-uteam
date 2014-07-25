@@ -1,82 +1,20 @@
-
 <!DOCTYPE html>
-<html ng-app="tagApp">
+<html ng-app="uteamApp">
 <head>
-<meta charset="UTF-8" />
-<title>Tag Example</title>
-<base href="/socialtech/" target="_self" />
+    <meta charset="UTF-8" />
+    <title>UTeam ImageSelector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- Librerias AngularJS -->
+    <script src="/app/components/angular/angular.min.js"></script>
 
-<!-- Librerias AngularJS -->
-<script src="js/jquery/jquery-2.1.0.min.js">
-	
-</script>
-<script src="js/angular/angular-1.2.16.min.js">
-	
-</script>
-<script src="js/angular/angular-route-1.2.16.js">
-	
-</script>
+    <!-- Componente uteam_imageselector -->
+    <link rel="stylesheet" href="/src/imageselector/angular-uteam-imageselector.css" />
+    <script src="/src/imageselector/angular-uteam-imageselector.js"></script>
 
-<!-- Estilos BASE! -->
-<link rel="stylesheet" href="css/base/base.css" />
-<link rel="stylesheet" href="css/base/debug.css" />
-
-<!-- Fonts -->
-<link rel="stylesheet" href="css/fonts/icomoon/icomoon.css" />
-<link rel="stylesheet" href="css/fonts/freightsans/fonts-freightsans.css" />
-<link rel="stylesheet" href="css/fonts/digital/digital.css" />
-
-<!-- Componente SM_Menu -->
-<link rel="stylesheet" href="component/angular-sm-menu/angular-sm-menu.css" />
-<script src="component/angular-sm-menu/angular-sm-menu.js"> </script>
-
-<!-- Componente SM_Tracker -->
-<link rel="stylesheet" href="component/angular-tracker/angular-tracker.css" />
-<script src="component/angular-tracker/angular-tracker.js"> </script>
-	
-
-
-<!-- Componente SM_Tags -->
-<link rel="stylesheet"	href="component/angular-sm-tags/angular-sm-tags.css" />
-<script src="component/angular-sm-tags/angular-sm-tags.js"></script>
-
-<!-- Componente UT_Carrusel -->
-<link rel="stylesheet"	href="component/angular-ut-carrusel/angular-ut-carrusel.css" />
-<script src="component/angular-ut-carrusel/angular-ut-carrusel.js"></script>
-
-<!-- Aplicativo Angular -->
-<link rel="stylesheet" href="css/tags/tags.css" />
-<script src="js/tags/app.js"></script>
-
-
+    <script src="/app.js"></script>
 </head>
 <body>
-	<header ng-controller="MainController">
-		<menu>
-			<tags>
-				<input placeholder="Búsqueda" ng-model="search" />
-				<button class="icon-search" ng-click="addTag(search)"></button>
-			</tags>
-		</menu>
-	
-		
-	</header>
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<div>
-		<carrusel>		
-		</carrusel>
-	</div>
-	
-<!-- 	<div class="container" > -->
-<!-- 		<menu ng-controller="Main2Controller"></menu> -->
-<!-- 	</div> -->
-	<tracker id="v.gonzalez.o@gmail.com"></tracker>
+    <imageselector></imageselector>
 </body>
 </html>
