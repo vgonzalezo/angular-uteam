@@ -5,32 +5,37 @@ angular.module('angular-uteam', ['webcam', 'angularFileUpload', 'ui.bootstrap'])
         replace: true,
         templateUrl: 'src/imageselector/angular-uteam-imageselector.html',
         controller: function ($scope, $modal) {
-            var showImage = function (image) {
+            $scope.img = null;
+
+            var showImage = function() {
+                //console.log($scope.img);
+                $(".imageselector img").attr("src", $scope.img);
+            };
+
+            var captureImage = function (image) {
                 var reader = new FileReader();
 
                 reader.readAsDataURL(image);
                 reader.onloadend = function () {
-                    $(".imageselector img").attr("src", reader.result);
+                    $scope.img = reader.result;
+                    showImage();
                 };
             };
 
-            var screenshot = function(video) {
-                var canvas = $("canvas");
-                var ctx = canvas[0].getContext("2d");
+            var captureVideo = function(video) {
+                var canvas = document.createElement('canvas'); //$("canvas")[0];
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+
+                var ctx = canvas.getContext("2d");
 
                 ctx.drawImage(video, 0, 0);
+                $scope.img = canvas.toDataURL();
+                showImage();
             }
 
-            var drawImage = function (image) {
-
-
-                /*console.log("img.width: " + img.width + " | img.height: " + img.height);
-                 console.log("canvas.width: " + canvas.width() + " | canvas.height: " + canvas.height());
-                 ctx.drawImage(img,0,0, img.width, img.height, 0, 0, canvas.width() / 3, canvas.height() / 3);*/
-            };
-
             $scope.onFileSelect = function (files) {
-                showImage(files[0]);
+                captureImage(files[0]);
             };
 
             $scope.webcam = function () {
@@ -42,16 +47,11 @@ angular.module('angular-uteam', ['webcam', 'angularFileUpload', 'ui.bootstrap'])
                         };
 
                         $scope.select = function() {
-                            screenshot($("video")[0]);
+                            captureVideo($("video")[0]);
                             $modalInstance.close();
                         };
                     },
-                    size: 'sm', /* lg */
-                    resolve: {
-                        /*items: function () {
-                         return $scope.items;
-                         }*/
-                    }
+                    size: 'sm' /* lg */
                 });
             }
         }

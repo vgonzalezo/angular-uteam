@@ -4,27 +4,38 @@ video.webcam-live, .imageselector {
     position: relative;
 }
 
-.imageselector canvas, .imageselector input[type=file], img  {
+.imageselector input[type=file], img  {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    height: 100%;
-    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
 }
 
-.imageselector .upload-button {
-    width: 32px;
-    height: 32px;
-    border-radius: 5px;
-    border: 1px solid black;
-    position: relative;
+.imageselector .toolbar {
+    position: absolute;
+    bottom: 0;
+    margin: 10px;
+}
+
+.imageselector .glyphicon {
+    zoom: 2;
 }
 
 .imageselector .btn {
     position: relative;
     overflow: hidden;
+    margin: 2px;
+    background: transparent;
+    opacity: 0.5;
+}
+
+.imageselector .btn:hover {
+    background: #ccc;
+    opacity: 1;
 }
 
 .imageselector input[type=file] {
