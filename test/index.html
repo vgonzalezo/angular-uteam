@@ -5,16 +5,27 @@
     <title>UTeam ImageSelector</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
+    <script src="/app/components/jquery/dist/jquery.min.js"></script>
     <!-- Librerias AngularJS -->
     <script src="/app/components/angular/angular.min.js"></script>
+    <script src="/app/components/webcam-directive/dist/1.1.0/webcam.min.js"></script>
+    <script src="/app/components/ng-file-upload/angular-file-upload.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/app/components/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="/app/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/app/components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 
     <!-- Componente uteam_imageselector -->
     <link rel="stylesheet" href="/src/imageselector/angular-uteam-imageselector.css" />
     <script src="/src/imageselector/angular-uteam-imageselector.js"></script>
 
-    <script src="/app.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="default.css" />
 </head>
 <body>
-    <imageselector></imageselector>
+    <div class="drop-box">
+        <imageselector></imageselector>
+    </div>
 </body>
 </html>
