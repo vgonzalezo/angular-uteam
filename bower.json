@@ -1,7 +1,10 @@
 {
   "name": "angular-uteam",
   "version": "0.0.1",
-  "main": "dist/js/angular-uteam.min.js",
+  "main": [
+      "dist/js/angular-uteam.min.js",
+      "dist/css/angular-uteam.min.css"
+  ],
   "homepage": "https://github.com/vgonzalezo/angular-uteam",
   "authors": [
     "vgonzalezo <v.gonzalez.o@gmail.com>"
