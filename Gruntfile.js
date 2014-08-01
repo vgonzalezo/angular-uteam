@@ -19,9 +19,16 @@ module.exports = function(grunt) {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
             },
-            dist: {
+            js: {
                 files: {
                     'dist/js/<%= pkg.name %>.min.js': ['<%= concat.js.dest %>']
+                }
+            }
+        },
+        cssmin: {
+            css: {
+                files: {
+                    'dist/css/<%= pkg.name %>.min.css': ['<%= concat.css.dest %>']
                 }
             }
         },
@@ -52,8 +59,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     grunt.registerTask('test', ['jshint', 'qunit']);
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'cssmin']);
 
 };
