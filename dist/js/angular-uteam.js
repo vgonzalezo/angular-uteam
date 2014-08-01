@@ -1,3 +1,15 @@
+var uteamApp = angular.module('angular-uteam', ['webcam', 'angularFileUpload', 'ui.bootstrap']);
+
+uteamApp.run(function($rootScope) {
+        $rootScope.img = null;
+
+        $rootScope.showImage = function() {
+            //console.log($scope.img);
+            $(".imageselector img").attr("src", $rootScope.img);
+        };
+    }
+);
+
 uteamApp.directive('imageselector', ['$scope', '$rootScope', '$modal', function ($scope, $rootScope, $modal ) {
         return {
             restrict: 'E',
@@ -29,6 +41,31 @@ uteamApp.directive('imageselector', ['$scope', '$rootScope', '$modal', function 
                     });
                 };
             }
+        };
+    }
+]);
+
+uteamApp.controller('webcam-ctrl', ['$scope', '$rootScope', '$modalInstance',
+    function ($scope, $rootScope, $modalInstance) {
+        var captureVideo = function(video) {
+            var canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+
+            var ctx = canvas.getContext("2d");
+
+            ctx.drawImage(video, 0, 0);
+            $rootScope.img = canvas.toDataURL();
+            $rootScope.showImage();
+        };
+
+        $scope.close = function() {
+            $modalInstance.close();
+        };
+
+        $scope.select = function() {
+            captureVideo($("video")[0]);
+            $modalInstance.close();
         };
     }
 ]);

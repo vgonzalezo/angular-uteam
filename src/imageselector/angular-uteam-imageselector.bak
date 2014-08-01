@@ -1,0 +1,31 @@
+uteamApp.directive('imageselector', function () {
+    return {
+        restrict: 'E',
+        transclude: true,
+        replace: true,
+        templateUrl: 'src/imageselector/angular-uteam-imageselector.html',
+        controller: function ($scope, $rootScope, $modal) {
+            var captureImage = function (image) {
+                var reader = new FileReader();
+
+                reader.readAsDataURL(image);
+                reader.onloadend = function () {
+                    $rootScope.img = reader.result;
+                    $rootScope.showImage();
+                };
+            };
+
+            $scope.onFileSelect = function (files) {
+                captureImage(files[0]);
+            };
+
+            $scope.webcam = function () {
+                $modal.open({
+                    templateUrl: 'src/webcam/angular-uteam-webcam.html',
+                    controller: 'webcam-ctlr',
+                    size: 'sm' /* lg */
+                });
+            };
+        }
+    };
+});
