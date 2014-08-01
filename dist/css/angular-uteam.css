@@ -29,12 +29,12 @@
     position: relative;
     overflow: hidden;
     margin: 2px;
-    background: transparent;
+    /*background: transparent;*/
     opacity: 0.7;
 }
 
 .imageselector .btn:hover {
-    background: #ccc;
+    /*background: #ccc;*/
     opacity: 1;
     color: white;
 }
