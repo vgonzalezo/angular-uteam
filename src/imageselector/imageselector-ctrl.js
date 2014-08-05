@@ -1,8 +1,10 @@
 uteamApp.controller('imageselector-ctrl', ['$scope', '$rootScope', '$modal', '$attrs',
     function ($scope, $rootScope, $modal, $attrs) {
-        //Seteamos la imagen por defecto
-        $rootScope.img = $attrs.src;
-        $scope.img = $attrs.src;
+        $attrs.$observe('src', function() {
+            //Seteamos la imagen por defecto
+            $rootScope.img = $attrs.src;
+            $scope.img = $attrs.src;
+        });
 
         var captureImage = function (image) {
             var reader = new FileReader();
