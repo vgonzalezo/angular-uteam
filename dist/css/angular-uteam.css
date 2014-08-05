@@ -5,7 +5,8 @@
     overflow: hidden;
 }
 
-.imageselector input[type=file], img  {
+.imageselector input[type=file],
+.imageselector img  {
     position: absolute;
     left: 0;
     right: 0;
