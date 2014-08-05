@@ -5,7 +5,7 @@ uteamApp.run(['$rootScope',
             $rootScope.img = null;
 
             $rootScope.showImage = function() {
-                //console.log($scope.img);
+                console.log($rootScope.img);
                 $(".imageselector img").attr("src", $rootScope.img);
             };
         }

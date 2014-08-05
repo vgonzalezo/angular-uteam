@@ -6,6 +6,7 @@ var app = express();
 app.use(express.static(__dirname+'/app/components'));
 app.use(express.static(__dirname+'/dist'));
 app.use(express.static(__dirname+'/test'));
+app.use(express.static(__dirname+'/src'));
 
 // ruteo
 /*app.get('/', function(req, res){
