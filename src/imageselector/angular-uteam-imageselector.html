@@ -1,4 +1,4 @@
-<div class="imageselector" ng-file-drop="onFileSelect($files);" accept="image/*">
+<div class="imageselector" ng-file-drop="onFileSelect($files);" accept="image/*" ng-show="dropSupported">
     <img ng-src="{{img}}" />
     <div class="toolbar">
         <button class="btn btn-orange" ng-click="webcam()">
